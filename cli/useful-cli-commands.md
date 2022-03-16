@@ -85,8 +85,6 @@ Check tx
 $BINARY query tx <hash> -o json | jq -r '.raw_log'
 ```
 
-
-
 ## STAKING 
 ---
 Stake
@@ -145,4 +143,11 @@ Unjail Validator
 
 ```bash
 $BINARY tx slashing unjail --from $KEYNAME  --chain-id $CHAINID
+```
+
+## WASM
+Get contract state:
+
+```bash
+$BINARY q wasm contract-state all <contract-address>
 ```
