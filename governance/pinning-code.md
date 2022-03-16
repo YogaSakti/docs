@@ -5,13 +5,13 @@ Pinning a code ID adds it to validators' cach. In effect, this removes startup f
 You can see which contracts are currently pinned with
 
 ```sh
-junod query wasm pinned
+$BINARY query wasm pinned
 ```
 
 This will return a list of code IDs that have been pinned:
 
 ```bash
-junod query wasm pinned --node $NODE         
+$BINARY query wasm pinned --node $NODE         
 code_ids: []
 pagination:
   next_key: null
@@ -46,8 +46,8 @@ You can now build this into a SubmitProposal message:
 And sign and broadcast it:
 
 ```
-junod tx sign tx_unsigned.json --from validator --chain-id=uni
-junod tx broadcast tx_signed.json
+$BINARY tx sign tx_unsigned.json --from validator --chain-id=uni
+$BINARY tx broadcast tx_signed.json
 ```
 
 Likewise, `UnpinCodes` can unpin already-pinned contracts. The specified `code_ids` will be unpinned.

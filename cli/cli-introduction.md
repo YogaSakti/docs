@@ -1,30 +1,24 @@
 ---
 description: >-
-  A general introduction Juno cli along with a brief description of commands and
+  A general introduction cli along with a brief description of commands and
   flags
-cover: ../.gitbook/assets/Gitbook Banner large 6 (11).png
-coverY: 0
 ---
 
 # Introduction
 
 ## Introduction
 
-`junod` is a command line client for the Juno network. Juno users can use `junod` to send transactions to the Juno network and query the blockchain data.
-
-{% hint style="info" %}
-See [here](../validators/getting-setup.md) for instructions on installing `junod`.
-{% endhint %}
+cosmos users can use cli binary to send transactions to the the network and query the blockchain data.
 
 ### Working Directory <a href="working-directory" id="working-directory"></a>
 
-The default working directory for the `junod` is `$HOME/.juno`, which is mainly used to store configuration files and blockchain data. The Juno `key` data is saved in the working directory of `junod`. You can also specify the `junod` working directory by using the `--home` flag when executing `junod`.&#x20;
+The default working directory for the network is `$HOME/.<network-name>`, which is mainly used to store configuration files and blockchain data. The `key` data is saved in the working directory. You can also specify the working directory by using the `--home` flag when executing cli command.&#x20;
 
 ### Connecting to a Full-Node
 
-By default, `junod` uses `tcp://localhost:26657` as the RPC address to connect to the Juno network. This default configuration assumes that the machine executing `junod` is running as a full-node.
+By default, cosmos node uses `tcp://localhost:26657` as the RPC address to connect to the network. This default configuration assumes that the machine executing binary is running as a full-node.
 
-The RPC address can be specified to connect to any full-node with an exposed RPC port by adding the `--node` flag when executing `junod`
+The RPC address can be specified to connect to any full-node with an exposed RPC port by adding the `--node` flag when executing binary
 
 ### Global Flags <a href="global-flags" id="global-flags"></a>
 
@@ -35,7 +29,7 @@ All GET commands have the following global flags:
 | Name, shorthand | type   | Required | Default Value | Description                          |
 | --------------- | ------ | -------- | ------------- | ------------------------------------ |
 | --chain-id      | string |          |               | The network Chain ID                 |
-| --home          | string |          | $HOME/.juno   | Directory for config and data        |
+| --home          | string |          | $HOME/.network-name   | Directory for config and data        |
 | --trace         | string |          |               | Print out full stack trace on errors |
 | --log\_format   | string |          | plain         | Logging format (json \| plain)       |
 
@@ -65,7 +59,7 @@ All POST commands have the following global flags:
 | --trust-node      | bool   |          | true                  | Don't verify proofs for responses                                                                              |
 | --yes             | bool   |          | true                  | Skip tx broadcasting prompt confirmation                                                                       |
 | --chain-id        | string |          |                       | The network Chain ID                                                                                           |
-| --home            | string |          | $HOME/.juno           | Directory for config and data                                                                                  |
+| --home            | string |          | $HOME/.network-name           | Directory for config and data                                                                                  |
 | --trace           | string |          |                       | Print out full stack trace on errors                                                                           |
 
 ### Module Commands <a href="module-commands" id="module-commands"></a>

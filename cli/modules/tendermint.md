@@ -8,17 +8,17 @@ description: The tendermint module allows for querying of validator and node add
 
 | Name, shorthand | Description |
 | :--- | :--- |
-| [show-address](tendermint.md#junod-tendermint-show-address) | Shows this node's tendermint validator consensus address |
-| [show-node-id](tendermint.md#iris-tendermint-show-node-id) | Show this node's ID |
-| [show-validator](tendermint.md#iris-tendermint-show-validator) | Show this node's tendermint validator info |
-| [version](tendermint.md#iris-tendermint-version) | Print tendermint libraries' version |
+| [show-address](tendermint.md#tendermint-show-address) | Shows this node's tendermint validator consensus address |
+| [show-node-id](tendermint.md#tendermint-show-node-id) | Show this node's ID |
+| [show-validator](tendermint.md#tendermint-show-validator) | Show this node's tendermint validator info |
+| [version](tendermint.md#tendermint-version) | Print tendermint libraries' version |
 
-### junod tendermint show-address
+### tendermint show-address
 
 The following command will show the tendermint validator address of the local node.
 
 ```text
-junod tendermint show-address
+$BINARY tendermint show-address
 ```
 
 Returns the bech32 encoded validator consensus address `<junovalcon...>`:
@@ -27,12 +27,12 @@ Returns the bech32 encoded validator consensus address `<junovalcon...>`:
 junovalcons1xyld7wpwjwx5reu8k0rrveceqztyp3h3fy3m6m
 ```
 
-### junod tendermint show-node-id <a id="iris-tendermint-show-node-id"></a>
+### tendermint show-node-id <a id="tendermint-show-node-id"></a>
 
 The following command will show the nodes ID
 
 ```text
-junod tendermint show-node-id
+$BINARY tendermint show-node-id
 ```
 
 Returns something similar to:
@@ -41,12 +41,12 @@ Returns something similar to:
 ec730773944fbdc6a8c4918984f571aa57c975a3
 ```
 
-### junod tendermint show-validator <a id="iris-tendermint-show-validator"></a>
+### tendermint show-validator <a id="tendermint-show-validator"></a>
 
 The following command will show the validators tendermint consensus pubkey:
 
 ```text
-junod tendermint show-validator
+$BINARY tendermint show-validator
 ```
 
 Returns something similar to:
@@ -55,10 +55,10 @@ Returns something similar to:
 junovalconspub1zcjduepqltmy70ayq5c52fqga7xv336wv3jn8wxjcqra72amp6gcm7l8jwkss0ekqe
 ```
 
-### junod tendermint version <a id="iris-tendermint-version"></a>
+### tendermint version <a id="tendermint-version"></a>
 
 ```text
-junod tendermint version
+$BINARY tendermint version
 ```
 
 Returns something similar to:

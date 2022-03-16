@@ -2,10 +2,10 @@
 
 [Governance proposals](https://hub.cosmos.network/main/resources/gaiad.html) target the parameters of specific modules. Go to the [list of modules](https://docs.cosmos.network/master/modules/), and go to the 'parameters' tab for the module you are interested in. 
 
-You can query the current setting for that parameter with `junod query params subspace [module] [parameter]`. For example, to query [the `communitytax` param in `distribution`](https://docs.cosmos.network/master/modules/distribution/07_params.html), you would do:
+You can query the current setting for that parameter with `$BINARY query params subspace [module] [parameter]`. For example, to query [the `communitytax` param in `distribution`](https://docs.cosmos.network/master/modules/distribution/07_params.html), you would do:
 
 ```bash
-junod query params subspace distribution communitytax
+$BINARY query params subspace distribution communitytax
 ```
 
 > NB: if you have not set it in config, you will need to add chain-id: `--chain-id uni`.
@@ -21,7 +21,7 @@ value: '"0.020000000000000000"'
 You can query [`BaseApp`](https://docs.cosmos.network/master/core/baseapp.html) parameters as well:
 
 ```bash
-junod query params subspace baseapp BlockParams
+$BINARY query params subspace baseapp BlockParams
 ```
 
 This will return:
@@ -54,7 +54,7 @@ We can encode the parameter change in a JSON proposal like so:
 We can then submit it:
 
 ```bash
-junod tx gov submit-proposal param-change ./max_block_gas_proposal.json --from needlecast --fees 5000ujuno --gas auto
+$BINARY tx gov submit-proposal param-change ./max_block_gas_proposal.json --from needlecast --fees 5000ujuno --gas auto
 ```
 
 (Note: this example is [Juno Mainnet Proposal 6](https://www.mintscan.io/juno/proposals/6)).

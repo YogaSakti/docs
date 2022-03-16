@@ -15,7 +15,7 @@ description: >-
 ### Query node status <a id="query-node-status"></a>
 
 ```text
-junod status
+$BINARY status
 ```
 
 Returns something similar to:

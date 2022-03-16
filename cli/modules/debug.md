@@ -8,16 +8,16 @@ description: The debug module is a tool for simple debugging.
 
 | Name                                        | Description                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
-| [addr](debug.md#junod-debug-addr)           | Convert an address between hex and bech32             |
-| [pubkey](debug.md#junod-debug-pubkey)       | Decode a ED25519 pubkey from hex, base64, or bech32   |
-| [raw-bytes](debug.md#junod-debug-raw-bytes) | Convert raw bytes output (eg. \[10 21 13 127]) to hex |
+| [addr](debug.md#debug-addr)           | Convert an address between hex and bech32             |
+| [pubkey](debug.md#debug-pubkey)       | Decode a ED25519 pubkey from hex, base64, or bech32   |
+| [raw-bytes](debug.md#debug-raw-bytes) | Convert raw bytes output (eg. \[10 21 13 127]) to hex |
 
-### junod debug addr
+### debug addr
 
 Convert juno address between `hex` and `bech32` format.
 
 ```
-junod debug addr [address] [flags]
+$BINARY debug addr [address] [flags]
 ```
 
 {% hint style="info" %}
@@ -29,17 +29,17 @@ The command will accept either `hex` or `bech32` coded address as the `[address]
 {% hint style="info" %}
 **TIP**
 
-Your `bech32` encoded juno local addresses can be queried with `junod keys list` 
+Your `bech32` encoded juno local addresses can be queried with `$BINARY keys list` 
 {% endhint %}
 
 Example usage:
 
 ```
 # query bech32 encoded address
-junod debug addr juno1ludczrvlw36fkur9vy49lx4vjqhppn30h42ufg
+$BINARY debug addr juno1ludczrvlw36fkur9vy49lx4vjqhppn30h42ufg
 
 # query hex address
-junod debug addr FF1B810D9F74749B7065612A5F9AAC902E10CE2F
+$BINARY debug addr FF1B810D9F74749B7065612A5F9AAC902E10CE2F
 ```
 
 Returns:
@@ -51,12 +51,12 @@ Bech32 Acc: juno1ludczrvlw36fkur9vy49lx4vjqhppn30h42ufg
 Bech32 Val: junovaloper1ludczrvlw36fkur9vy49lx4vjqhppn30ggunj3
 ```
 
-### junod debug pubkey
+### debug pubkey
 
 Decode a ED25519 pubkey from `hex`, `base64`, or `bech32`.
 
 ```
-junod debug pubkey [pubkey] [flags]
+$BINARY debug pubkey [pubkey] [flags]
 ```
 
 {% hint style="info" %}
@@ -68,20 +68,20 @@ The command will accept `hex`, `base64` or `bech32` coded keys as `[pubkey] `arg
 {% hint style="info" %}
 **TIP**
 
-Your `bech32` encoded validator pubkey can be queried with `junod tendermint show-validator`
+Your `bech32` encoded validator pubkey can be queried with `$BINARY tendermint show-validator`
 {% endhint %}
 
 Example usage:
 
 ```
 # query hex address
-junod debug pubkey F2AF5F796A1626C8BB51535E361F2E4B66A61B9AAD177B83452E0FCD5A14690DE
+$BINARY debug pubkey F2AF5F796A1626C8BB51535E361F2E4B66A61B9AAD177B83452E0FCD5A14690DE
 
 # query base64 encoded address
-junod debug pubkey 8q9feWoWJsi7UVNeNh8uS2amG5qtF3uDRS4PzVoUaQ0=
+$BINARY debug pubkey 8q9feWoWJsi7UVNeNh8uS2amG5qtF3uDRS4PzVoUaQ0=
 
 # query base32 encoded address
-junod debug pubkey junopub1zcjduepq72h477t2zcnv3w632d0rv8ewfdn2vxu645thhq699c8u6ks5dyxs7f2qt6Returns something similar to:
+$BINARY debug pubkey junopub1zcjduepq72h477t2zcnv3w632d0rv8ewfdn2vxu645thhq699c8u6ks5dyxs7f2qt6Returns something similar to:
 ```
 
 Returns:
@@ -95,18 +95,18 @@ Bech32 Validator Operator: junovaloperpub1zcjduepq72h477t2zcnv3w632d0rv8ewfdn2vx
 Bech32 Validator Consensus: junovalconspub1zcjduepq72h477t2zcnv3w632d0rv8ewfdn2vxu645thhq699c8u6ks5dyxsahwpfj
 ```
 
-### junod debug raw-bytes
+### debug raw-bytes
 
 Convert raw bytes output (eg. \[10 21 13 127]) to `hex`.
 
 ```
-junod debug raw-bytes <raw-bytes>
+$BINARY debug raw-bytes <raw-bytes>
 ```
 
 Example command:
 
 ```
-junod debug raw-bytes "10 21 13 127"
+$BINARY debug raw-bytes "10 21 13 127"
 ```
 
 Returns:

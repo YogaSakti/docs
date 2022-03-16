@@ -10,21 +10,21 @@ description: >-
 
 | Name | Description |
 | :--- | :--- |
-| [add](keys.md#junod-keys-add) | Add an encrypted private key \(either newly generated or recovered\), encrypt it, and save to disk |
-| [delete](keys.md#iris-keys-delete) | Delete the given key |
-| [export](keys.md#iris-keys-export) | Export private keys |
-| [import](keys.md#iris-keys-import) | Import private keys into the local keystore |
-| [list](keys.md#iris-keys-list) | List all keys |
-| [mnemonic](keys.md#iris-keys-mnemonic) | Compute the bip39 mnemonic for some input entropy |
-| [parse](keys.md#iris-keys-parse) | Parse address from hex to bech32 and vice versa |
-| [show](keys.md#iris-keys-show) | Retrieve key information by name or address |
+| [add](keys.md#keys-add) | Add an encrypted private key \(either newly generated or recovered\), encrypt it, and save to disk |
+| [delete](keys.md#keys-delete) | Delete the given key |
+| [export](keys.md#keys-export) | Export private keys |
+| [import](keys.md#keys-import) | Import private keys into the local keystore |
+| [list](keys.md#keys-list) | List all keys |
+| [mnemonic](keys.md#keys-mnemonic) | Compute the bip39 mnemonic for some input entropy |
+| [parse](keys.md#keys-parse) | Parse address from hex to bech32 and vice versa |
+| [show](keys.md#keys-show) | Retrieve key information by name or address |
 
-### junod keys add
+### keys add
 
 Derive a new private key and encrypt to disk.
 
 ```text
-junod keys add <key-name> [flags]
+$BINARY keys add <key-name> [flags]
 ```
 
 **Flags:**
@@ -51,7 +51,7 @@ junod keys add <key-name> [flags]
 The following example will create a key in the local keystore named `MyKey` :
 
 ```text
-junod keys add MyKey
+$BINARY keys add MyKey
 ```
 
 Enter and repeat the password, at least 8 characters, then you will get a new key.
@@ -69,7 +69,7 @@ If you forget your password or lose your key, or you would like to use your key 
 The following example will recover a key with the seed phrase and store it in the local keystore with the name `MyKey`:
 
 ```text
-junod keys add MyKey --recover
+$BINARY keys add MyKey --recover
 ```
 
 You'll be asked to enter and repeat the new password for your key, and enter the seed phrase. Then you get your key back.
@@ -80,12 +80,12 @@ Repeat the passphrase:
 Enter your recovery seed phrase:
 ```
 
-#### Create a multisig key <a id="create-a-multisig-key"></a>
+#### Create a multisig key
 
 The following example creates a multisig key with 3 sub-keys, and specify the minimum number of signatures as 2. The transaction could be broadcast only when the number of signatures is greater than or equal to 2.
 
 ```text
-junod keys add <multisig-keyname> --multisig-threshold=2 --multisig=<signer-keyname-1>,<signer-keyname-2>,<signer-keyname-3>
+$BINARY keys add <multisig-keyname> --multisig-threshold=2 --multisig=<signer-keyname-1>,<signer-keyname-2>,<signer-keyname-3>
 ```
 
 {% hint style="info" %}
@@ -95,17 +95,17 @@ junod keys add <multisig-keyname> --multisig-threshold=2 --multisig=<signer-keyn
 
 If you don't have all the permission of sub-keys, you can ask for the `pubkey`'s to create the offline keys first, then you will be able to create the multisig key.
 
-Offline key can be created by `junod keys add --pubkey`.
+Offline key can be created by `$BINARY keys add --pubkey`.
 {% endhint %}
 
 How to use multisig key to sign and broadcast a transaction, please refer to multisign.
 
-### junod keys delete <a id="iris-keys-delete"></a>
+### keys delete
 
 Delete a local key by the given name.
 
 ```text
-junod keys delete <key-name> [flags]
+$BINARY keys delete <key-name> [flags]
 ```
 
 **Flags:**
@@ -115,47 +115,47 @@ junod keys delete <key-name> [flags]
 | --force, -f | false | Remove the key unconditionally without asking for the passphrase |  |
 | --yes, -y | false | Skip confirmation prompt when deleting offline or ledger key references |  |
 
-#### Delete a local key <a id="delete-a-local-key"></a>
+#### Delete a local key
 
 The following example will delete the key named `MyKey` from the local keystore:
 
 ```text
-junod keys delete MyKey
+$BINARY keys delete MyKey
 ```
 
-### junod keys export <a id="iris-keys-export"></a>
+### keys export
 
 Export the keystore of a key to stdout:
 
 ```text
-junod keys export <key-name> [flags]
+$BINARY keys export <key-name> [flags]
 ```
 
-#### Export keystore <a id="export-keystore"></a>
+#### Export keystore
 
 The following example will export the key named `MyKey` to stdout:
 
 ```text
-junod keys export Mykey
+$BINARY keys export Mykey
 ```
 
-### junod keys import <a id="iris-keys-import"></a>
+### keys import
 
 Import a ASCII armored private key into the local keybase.
 
 ```text
-junod keys import <name> <keyfile> [flags]
+$BINARY keys import <name> <keyfile> [flags]
 ```
 
-#### Import a ASCII armored private key <a id="import-a-ascii-armored-private-key"></a>
+#### Import a ASCII armored private key 
 
 The following example will import the private keys from `key-to-import.json` and store it in the local keystore with the name `MyKey`
 
 ```text
-junod keys import MyKey key-to-import.json [flags]
+$BINARY keys import MyKey key-to-import.json [flags]
 ```
 
-### junod keys list <a id="iris-keys-list"></a>
+### keys list
 
 List all the keys from the local keystore that have been stored by this key manager, along with their associated name, type, address and pubkey.
 
@@ -165,20 +165,20 @@ List all the keys from the local keystore that have been stored by this key mana
 | :--- | :--- | :--- | :--- |
 | --list-name |  | List names only |  |
 
-#### List all keys <a id="list-all-keys"></a>
+#### List all keys
 
-The following example will list all keys in the local keystore managed by the junod key manager:
+The following example will list all keys in the local keystore managed by the $BINARY key manager:
 
 ```text
-junod keys list
+$BINARY keys list
 ```
 
-### junod keys mnemonic <a id="iris-keys-mnemonic"></a>
+### keys mnemonic
 
 Create a `bip39` mnemonic, sometimes called a seed phrase, by reading from the system entropy. To pass your own entropy, use `unsafe-entropy` mode.
 
 ```text
-junod keys mnemonic [flags]
+$BINARY keys mnemonic [flags]
 ```
 
 **Flags:**
@@ -187,12 +187,12 @@ junod keys mnemonic [flags]
 | :--- | :--- | :--- | :--- |
 | --unsafe-entropy |  | Prompt the user to supply their own entropy, instead of relying on the system |  |
 
-#### Create a bip39 mnemonic <a id="create-a-bip39-mnemonic"></a>
+#### Create a bip39 mnemonic
 
 The following example will create a new `bip39` seed phrase:
 
 ```text
-junod keys mnemonic
+$BINARY keys mnemonic
 ```
 
 You'll get a `bip39` mnemonic with 24 words, e.g.:
@@ -201,20 +201,20 @@ You'll get a `bip39` mnemonic with 24 words, e.g.:
 saddle lunch prefer aspect domain woman relief swarm exist behind cliff shadow meadow joke tower inherit upon tragic glow air march envelope joke estate
 ```
 
-### junod keys parse <a id="iris-keys-parse"></a>
+### keys parse
 
 Convert and print to stdout key addresses and fingerprints from hexadecimal into `bech32` juno prefixed format and vice versa.
 
 ```text
-junod keys parse <hex-or-bech32-address> [flags]
+$BINARY keys parse <hex-or-bech32-address> [flags]
 ```
 
-#### Convert and print to stdout key addresses from hex fingerprint <a id="convert-and-print-to-stdout-key-addresses-and-fingerprints"></a>
+#### Convert and print to stdout key addresses from hex fingerprint 
 
 The following example will convert a given hex fingerprint to a range of bep32 human readable address formats:
 
 ```text
-junod keys parse 313EDF382E938D41E787B3C6366719009640C6F1
+$BINARY keys parse 313EDF382E938D41E787B3C6366719009640C6F1
 ```
 
 Returns:
@@ -232,7 +232,7 @@ formats:
 Convert and print to stdout hex fingerprint from bep32 address:
 
 ```text
-junod keys parse juno1xyld7wpwjwx5reu8k0rrveceqztyp3h3z25gdr
+$BINARY keys parse juno1xyld7wpwjwx5reu8k0rrveceqztyp3h3z25gdr
 ```
 
 Returns:
@@ -242,12 +242,12 @@ human: juno
 bytes: 313EDF382E938D41E787B3C6366719009640C6F1
 ```
 
-### junod keys show <a id="iris-keys-show"></a>
+### keys show
 
 Get details of a local key.
 
 ```text
-junod keys show <key-name> [flags]
+$BINARY keys show <key-name> [flags]
 ```
 
 **Flags:**
@@ -260,12 +260,12 @@ junod keys show <key-name> [flags]
 | --multisig-threshold | 1 | K out of N required signatures |  |
 | --pubkey | false | Output the public key only \(overrides --output\) |  |
 
-#### Get details of a local key <a id="get-details-of-a-local-key"></a>
+#### Get details of a local key
 
 The following example will return the details for the key named `MyKey` :
 
 ```text
-junod keys show MyKey
+$BINARY keys show MyKey
 ```
 
 The following infos will be shown:
@@ -280,12 +280,12 @@ The following infos will be shown:
   pubkeys: []
 ```
 
-#### [\#](https://www.irisnet.org/docs/cli-client/keys.html#get-validator-operator-address)Get validator operator address <a id="get-validator-operator-address"></a>
+#### Get validator operator address 
 
 If an address has been bonded to be a validator operator \(which the address you used to create a validator\), then you can use `--bech val` to get the operator's address prefixed by `iva` and the pubkey prefixed by `ivp`:
 
 ```text
-junod keys show MyKey --bech val
+$BINARY keys show MyKey --bech val
 ```
 
 Example Output:

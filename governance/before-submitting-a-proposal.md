@@ -24,13 +24,13 @@ Please note the following special circumstances before proceeding:
 
 ### Begin the conversation
 
-Raise your proposal in the [Telegram ](https://t.me/JunoNetwork)chat or the #⚖︱governance discord channel. This will give you the opportunity to discuss with other network users and developers and further develop your ideas. Other participants may have some interest in the proposal and offer to further improve your proposal, or you may find that this idea has no support or maybe has already been satisfied in some other way.
+Raise your proposal in the community forum. This will give you the opportunity to discuss with other network users and developers and further develop your ideas. Other participants may have some interest in the proposal and offer to further improve your proposal, or you may find that this idea has no support or maybe has already been satisfied in some other way.
 
 Check via the block explorer that there is not already a past or present proposal that already directly deals with your issue.
 
-### Seek feedback on commonwealth.im
+### Seek feedback on community forum
 
-Once you have a clearly defined proposal idea. Fully draft your proposal text and submit to the Juno commonwealth.im project page [here](https://commonwealth.im/juno).
+Once you have a clearly defined proposal idea. Fully draft your proposal text and submit to forum.
 
 To make your proposal easily identifiable, please use the following format for the discussion title:
 
@@ -40,7 +40,7 @@ Please avoid using numbering in your proposal discussion. Should the proposal no
 
 It is recommended to **keep your proposal discussion open for at least seven days** prior to formalizing the proposal on-chain.
 
-To get the most exposure for your conversation, advertise the link in the Telegram and Discord. Consider contacting the core devs to advertise the discussion on the official @JunoNetwork Twitter account.
+To get the most exposure for your conversation, advertise the link in the Telegram and Discord. Consider contacting the core devs to advertise the discussion.
 
 Consider making appropriate changes to your proposal based on feedback from the discussion.
 
@@ -48,10 +48,10 @@ Consider making appropriate changes to your proposal based on feedback from the 
 
 Once you are confident about your proposal, you can submit on-chain for voting. You can find guidance on submitting your proposal [here](submitting-a-proposal-cli.md).
 
-Please note that the fee to fully fund a governance deposit is 500 JUNO. These funds will be returned to the depositor following completion of the voting period. If there are sufficient `NO WITH VETO` votes, the depositors will lose their funds. The depositor will also lose their funds if quorum of 33.4% is not reached.
+Please note that the fee to fully fund a governance deposit. These funds will be returned to the depositor following completion of the voting period. If there are sufficient `NO WITH VETO` votes, the depositors will lose their funds. The depositor will also lose their funds if quorum of 33.4% is not reached.
 
 ## Closing thoughts
 
-These are just guidelines to think about - obviously, Juno is a community initiative, and what the community proposes and passes will be actioned. The core team does not always know what is best for the project.
+These are just guidelines to think about - obviously, what the community proposes and passes will be actioned. The core team does not always know what is best for the project.
 
 For more information on the governance process, see [the cosmos governance process](https://hub.cosmos.network/main/governance/process.html).

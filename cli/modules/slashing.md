@@ -8,14 +8,14 @@ description: The slashing module can unjail your validator
 
 | Name | Description |
 | :--- | :--- |
-| [unjail](slashing.md#junod-tx-slashing-unjail) | Unjail validator previously jailed for downtime or double-sign. |
+| [unjail](slashing.md#tx-slashing-unjail) | Unjail validator previously jailed for downtime or double-sign. |
 
-### junod tx slashing unjail
+### tx slashing unjail
 
 Unjail validator previously jailed for downtime.
 
 ```text
-juno tx slashing unjail [flags]
+$BINARY tx slashing unjail [flags]
 ```
 
 #### Unjail a validator
@@ -23,7 +23,7 @@ juno tx slashing unjail [flags]
 The following example will unjail a validator using its validator operator \(owner\) key :
 
 ```text
-junod tx slashing unjail --from juno1ludczrvlw36fkur9vy49lx4vjqhppn30h42ufg --chain-id juno
+$BINARY tx slashing unjail --from juno1ludczrvlw36fkur9vy49lx4vjqhppn30h42ufg --chain-id juno
 ```
 
 {% hint style="info" %}
